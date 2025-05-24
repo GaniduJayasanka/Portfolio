@@ -88,34 +88,37 @@
       }
     }
 
-    .timeline-dot {
-      position: absolute;
-      left: -13px;
-      top: 5px;
-      width: 20px;
-      height: 20px;
-      background: #0a0f1c;
-      border: 4px solid #00bfff;
-      border-radius: 50%;
-      transition: background-color 0.3s ease;
-    }
+    /* Timeline Dot */
+.timeline-dot {
+  position: absolute;
+  left: -13px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background: #0a0f1c;
+  border: 4px solid #1de9b6; /* mint border */
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+.timeline-dot:hover {
+  background-color: #00ffc3;
+}
 
-    .timeline-dot:hover {
-      background-color: #00bfff;
-    }
+/* Card Styling */
+.work-card {
+  background: linear-gradient(to right, #1a1f2b, #232c3b); /* subtle skill-themed gradient */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 219, 222, 0.15);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 219, 222, 0.3);
+}
 
-    .work-card {
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 191, 255, 0.2);
-      padding: 20px 25px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .work-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 30px rgba(0, 191, 255, 0.4);
-    }
 
     .work-role {
       font-weight: 600;
