@@ -9,27 +9,38 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
-   body {
-  background-color: #0a0f1c; /* Deep navy background */
-  color: #f5f5f5;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 100vh;
-  padding: 20px 20px 20px;
-}
+    body {
+      background-color: #0a0f1c;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-header {
-  padding: 20px 30px;
-  margin-top: -20px;
-}
+    header {
+      padding: 20px 30px;
+      margin-top: -20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-/* Navigation */
-.nav-link {
-  color: #eef0f0; /* vibrant cyan */
-  transition: color 0.3s ease;
-}
-.nav-link:hover {
-  color: #138ae6; /* bright mint */
-}
+    /* Navigation */
+    .nav-link {
+      color: #eef0f0;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+      font-weight: 500;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-link:hover {
+      color: #00bfff;
+      border-bottom: 2px solid #00bfff;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
     .container-education {
       max-width: 900px;
@@ -42,28 +53,28 @@ header {
       font-weight: 600;
       text-align: center;
       margin-bottom: 10px;
-      color: #007acc;
+      color: #00bfff;
     }
 
     .desc {
       font-size: 1.125rem;
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 40px;
       text-align: center;
-      color: #555;
+      color: #ccc;
     }
 
     .timeline {
       position: relative;
       padding-left: 30px;
-      border-left: 4px solid #3399ff;
+      border-left: 4px solid #00bfff;
     }
 
     .timeline-item {
       position: relative;
       margin-bottom: 40px;
       padding-left: 20px;
-      animation: fadeInUp 0.6s ease-in-out;
+      animation: fadeInUp 0.6s ease-in-out both;
     }
 
     @keyframes fadeInUp {
@@ -83,32 +94,32 @@ header {
       top: 5px;
       width: 20px;
       height: 20px;
-      background: #fff;
-      border: 4px solid #3399ff;
+      background: #0a0f1c;
+      border: 4px solid #00bfff;
       border-radius: 50%;
       transition: background-color 0.3s ease;
     }
 
     .timeline-dot:hover {
-      background-color: #3399ff;
+      background-color: #00bfff;
     }
 
     .work-card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 153, 255, 0.15);
-      padding: 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 191, 255, 0.2);
+      padding: 20px 25px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .work-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(51, 153, 255, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 30px rgba(0, 191, 255, 0.4);
     }
 
     .work-role {
       font-weight: 600;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       color: #007acc;
       margin-bottom: 6px;
     }
@@ -123,19 +134,20 @@ header {
     .work-date {
       font-size: 0.9rem;
       font-style: italic;
-      color: #555;
-      margin-bottom: 10px;
+      color: #666;
+      margin-bottom: 12px;
     }
 
     .work-desc {
       font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 6px;
+      color: #444;
+      margin-bottom: 8px;
+      line-height: 1.6;
     }
 
     @media (max-width: 576px) {
       .work-role {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
       }
 
       .desc {
@@ -146,7 +158,7 @@ header {
   </style>
 </head>
 <body>
-<header class="container-fluid py-3">
+  <header class="container-fluid py-3">
     <div class="row align-items-center">
       <div class="col-12 col-md-3 text-md-start text-center mb-2 mb-md-0">
         <div class="logo">
@@ -156,63 +168,65 @@ header {
       <div class="col-12 col-md-6 offset-md-1">
         <nav>
           <ul class="nav justify-content-center">
-      <li class="nav-item"><a class="nav-link" href="../index.html">About</a></li>
-      <li class="nav-item"><a class="nav-link" href="Experience.html">Experience</a></li>
-      <li class="nav-item"><a class="nav-link" href="https://drive.google.com/file/d/1_oaZ0wp0cld3o30K4C04-S3CjKKkIXv/view?usp=sharing" target="_blank">Resume</a></li>
-      <li class="nav-item"><a class="nav-link" href="../Skills/Skills.html">Skills</a></li>
-      <li class="nav-item"><a class="nav-link" href="../Edu/education.html">Education</a></li>
-      <li class="nav-item"><a class="nav-link" href="../Projects/Projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="Experience.html">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://drive.google.com/file/d/1_oaZ0wp0cld3o30K4C04-S3CjKKkIXv/view?usp=sharing" target="_blank">Resume</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Skills/Skills.html">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Edu/education.html">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Projects/Projects.html">Projects</a></li>
           </ul>
+        </nav>
       </div>
     </div>
   </header>
-<div class="container-education">
-  <h1 class="title">Work Experience</h1>
-  <p class="desc">My work experience as a software engineer in various companies and projects.</p>
 
-  <div class="timeline">
+  <div class="container-education">
+    <h1 class="title">Work Experience</h1>
+    <p class="desc">My work experience as a software engineer in various companies and projects.</p>
 
-    <div class="timeline-item">
-      <div class="timeline-dot" title="Associate Software Engineer at Colombo Lotus Tower"></div>
-      <div class="work-card">
-        <div class="work-role">Associate Software Engineer</div>
-        <div class="work-company">Colombo Lotus Tower</div>
-        <div class="work-date">Jan 2024 – Present</div>
-        <ul>
-          <li class="work-desc">Manage and administer ERP systems, ensuring system availability, reliability, and optimal performance across departments.</li>
-          <li class="work-desc">Provide technical support and training to end users, troubleshoot application and system issues, and ensure minimal downtime.</li>
-          <li class="work-desc">Design, develop, and maintain internal web-based applications and database systems aligned with organizational needs.</li>
-          <li class="work-desc">Conduct rigorous software testing and debugging to identify and resolve issues, ensuring software quality and reliability.</li>
-          <li class="work-desc">Perform integration between multiple systems and third-party services to streamline data exchange and automation.</li>
-          <li class="work-desc">Implement and monitor data backup and recovery strategies, ensuring business continuity and data protection.</li>
-          <li class="work-desc">Optimize database performance, manage data migration, and enforce security protocols to protect sensitive information.</li>
-        </ul>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot" title="Associate Software Engineer at Colombo Lotus Tower"></div>
+        <div class="work-card">
+          <div class="work-role">Associate Software Engineer</div>
+          <div class="work-company">Colombo Lotus Tower</div>
+          <div class="work-date">Jan 2024 – Present</div>
+          <ul>
+            <li class="work-desc">Manage and administer ERP systems, ensuring system availability, reliability, and optimal performance across departments.</li>
+            <li class="work-desc">Provide technical support and training to end users, troubleshoot application and system issues, and ensure minimal downtime.</li>
+            <li class="work-desc">Design, develop, and maintain internal web-based applications and database systems aligned with organizational needs.</li>
+            <li class="work-desc">Conduct rigorous software testing and debugging to identify and resolve issues, ensuring software quality and reliability.</li>
+            <li class="work-desc">Perform integration between multiple systems and third-party services to streamline data exchange and automation.</li>
+            <li class="work-desc">Implement and monitor data backup and recovery strategies, ensuring business continuity and data protection.</li>
+            <li class="work-desc">Optimize database performance, manage data migration, and enforce security protocols to protect sensitive information.</li>
+          </ul>
+        </div>
       </div>
-    </div>
 
-    <div class="timeline-item">
-      <div class="timeline-dot" title="QA Software Engineer at NCR Corporation"></div>
-      <div class="work-card">
-        <div class="work-role">QA Software Engineer</div>
-        <div class="work-company">AT&T Global Information Solutions (NCR Corporation)</div>
-        <div class="work-date">Oct 2022 – Dec 2023</div>
-        <ul>
-    <li class="work-desc">Led end-to-end software testing, customization, and deployment of ATM solutions for major banking clients such as HSBC and Sampath Bank, ensuring regulatory compliance and smooth rollout.</li>
-    <li class="work-desc">Managed the Cheque Mark System, including SQL Server database migration, patch management, and overall system maintenance to minimize downtime and maintain data integrity.</li>
-    <li class="work-desc">Conducted server patching, performance tuning, and system hardening; implemented robust data backup and recovery solutions using Acronis to ensure high system availability.</li>
-    <li class="work-desc">Provided remote and phone-based technical support to bank clients; resolved complex issues by analyzing Electronic Journals (EJs), transaction logs, and Windows event logs.</li>
-    <li class="work-desc">Automated and configured Windows environments, including auto-login setup, user access management, and Group Policy (GPO) updates for improved operational security and compliance.</li>
-    <li class="work-desc">Collaborated cross-functionally with project teams in India and Malaysia to coordinate deployments, troubleshoot integration issues, and deliver updates on project milestones.</li>
-    <li class="work-desc">Participated in planning, quality assurance, and post-deployment support phases, ensuring smooth execution of ATM software rollouts and upgrades.</li>
-    <li class="work-desc">Implemented secure software practices, proactively addressed vulnerabilities, and installed Microsoft security patches to uphold compliance standards and protect critical systems.</li>
-        </ul>
+      <div class="timeline-item">
+        <div class="timeline-dot" title="QA Software Engineer at NCR Corporation"></div>
+        <div class="work-card">
+          <div class="work-role">QA Software Engineer</div>
+          <div class="work-company">AT&T Global Information Solutions (NCR Corporation)</div>
+          <div class="work-date">Oct 2022 – Dec 2023</div>
+          <ul>
+            <li class="work-desc">Led end-to-end software testing, customization, and deployment of ATM solutions for major banking clients such as HSBC and Sampath Bank, ensuring regulatory compliance and smooth rollout.</li>
+            <li class="work-desc">Managed the Cheque Mark System, including SQL Server database migration, patch management, and overall system maintenance to minimize downtime and maintain data integrity.</li>
+            <li class="work-desc">Conducted server patching, performance tuning, and system hardening; implemented robust data backup and recovery solutions using Acronis to ensure high system availability.</li>
+            <li class="work-desc">Provided remote and phone-based technical support to bank clients; resolved complex issues by analyzing Electronic Journals (EJs), transaction logs, and Windows event logs.</li>
+            <li class="work-desc">Automated and configured Windows environments, including auto-login setup, user access management, and Group Policy (GPO) updates for improved operational security and compliance.</li>
+            <li class="work-desc">Collaborated cross-functionally with project teams in India and Malaysia to coordinate deployments, troubleshoot integration issues, and deliver updates on project milestones.</li>
+            <li class="work-desc">Participated in planning, quality assurance, and post-deployment support phases, ensuring smooth execution of ATM software rollouts and upgrades.</li>
+            <li class="work-desc">Implemented secure software practices, proactively addressed vulnerabilities, and installed Microsoft security patches to uphold compliance standards and protect critical systems.</li>
+          </ul>
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
 
-<!-- Bootstrap Bundle JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
