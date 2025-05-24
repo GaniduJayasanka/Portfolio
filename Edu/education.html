@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Education Timeline - Sky Blue Theme with Dates</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+  body {
+  background-color: #0a0f1c; /* Deep navy background */
+  color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  padding: 20px 20px 20px;
+}
+
+header {
+  padding: 20px 30px;
+  margin-top: -20px;
+}
+
+/* Navigation */
+.nav-link {
+  color: #eef0f0; /* vibrant cyan */
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #138ae6; /* bright mint */
+}
+
+/* Container */
+.container-education {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+/* Title Section */
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #00cfff; /* bright skill-themed blue */
+}
+.desc {
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: #ddd;
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 4px solid #1de9b6; /* mint vertical line */
+}
+
+/* Timeline Item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 20px;
+}
+
+/* Timeline Dot */
+.timeline-dot {
+  position: absolute;
+  left: -13px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background: #0a0f1c;
+  border: 4px solid #1de9b6; /* mint border */
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+.timeline-dot:hover {
+  background-color: #00ffc3;
+}
+
+/* Card Styling */
+.edu-card {
+  background: linear-gradient(to right, #1a1f2b, #232c3b); /* subtle skill-themed gradient */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 219, 222, 0.15);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 219, 222, 0.3);
+}
+
+/* Text Styles */
+.edu-degree {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #00cfff;
+  margin-bottom: 6px;
+}
+.edu-institution {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1de9b6;
+  margin-bottom: 4px;
+}
+.edu-date {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #999;
+  margin-bottom: 10px;
+}
+.edu-gpa,
+.edu-major,
+.edu-minor,
+.edu-grade,
+.edu-note {
+  font-size: 0.95rem;
+  color: #bbb;
+  margin-bottom: 4px;
+}
+.edu-list {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: #ccc;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 576px) {
+  .edu-degree {
+    font-size: 1.1rem;
+  }
+  .desc {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="container-fluid py-3">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-3 text-md-start text-center mb-2 mb-md-0">
+        <div class="logo">
+          <span style="color: white;">Port</span><span style="color: #00aaff;">folio</span>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 offset-md-1">
+        <nav>
+          <ul class="nav justify-content-center">
+            <li class="nav-item"><a class="nav-link" href="D:/index.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="D:\Experience\index.html">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://drive.google.com/file/d/1_oaZOwpQclkd3o30K4CO4-s3CjKKkIXv/view?usp=sharing" target="_blank">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="D:\Portfolio\Skills\index.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="D:\Portfolio\Education\index.html">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="D:\Portfolio\Projects\index.html">Projects</a></li>
+          </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-education">
+    <h1 class="title">Education</h1>
+    <p class="desc">
+      My education has been a journey of self-discovery and growth. My educational details are as follows.
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot" title="BSc (Hons) Computer Science (Software Engineering)"></div>
+        <div class="edu-card">
+          <div class="edu-degree">BSc (Hons) Computer Science (Software Engineering)</div>
+          <div class="edu-institution">Kingston University, UK</div>
+          <div class="edu-date">2025</div>
+          <div class="edu-note">UK Kingston University</div>
+          <!-- Add GPA or other details if you want -->
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" title="Diploma in Software Engineering"></div>
+        <div class="edu-card">
+          <div class="edu-degree">Diploma in Software Engineering</div>
+          <div class="edu-institution">National Institute of Business Management (NIBM)</div>
+          <div class="edu-date">2022</div>
+          <div class="edu-note">Certificate</div>
+          <div class="edu-gpa">GPA: 3.68 / 4.0</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" title="Diploma in English - Pearson"></div>
+        <div class="edu-card">
+          <div class="edu-degree">Diploma in English (Pearson)</div>
+          <div class="edu-institution">Pearson Certificate</div>
+          <div class="edu-date">2024</div>
+          <div class="edu-grade">Grade: Distinction</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" title="Diploma in English - ESOFT"></div>
+        <div class="edu-card">
+          <div class="edu-degree">Diploma in English (ESOFT)</div>
+          <div class="edu-institution">ESOFT Metro Campus</div>
+          <div class="edu-date">2024</div>
+          <div class="edu-note">Certificate</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" title="Microsoft Copilot Studio Certificate"></div>
+        <div class="edu-card">
+          <div class="edu-degree">Microsoft Copilot Studio</div>
+          <div class="edu-institution">Certificate</div>
+          <div class="edu-date">2024</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" title="Advanced Level (A/L) Certificate"></div>
+        <div class="edu-card">
+          <div class="edu-degree">Advanced Level (A/L) Certificate</div>
+          <div class="edu-date">2018</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" title="Ordinary Level (O/L) Certificate"></div>
+        <div class="edu-card">
+          <div class="edu-degree">Ordinary Level (O/L) Certificate</div>
+          <div class="edu-date">2015</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle JS (Popper + Bootstrap) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

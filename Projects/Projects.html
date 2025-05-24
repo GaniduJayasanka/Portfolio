@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #00bfff;
+      --text-primary: #ffffff;
+      --text-secondary: #cccccc;
+      --bg-light: #1a1a1a;
+      --bg-dark: #000000;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    #projects {
+      background: linear-gradient(343.07deg, rgba(0, 191, 255, 0.06) 5.71%, rgba(0, 191, 255, 0) 64.83%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 98%, 0 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 0 100px;
+    }
+
+    #projects h2 {
+      font-size: 42px;
+      font-weight: 600;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    #projects p {
+      font-size: 18px;
+      text-align: center;
+      max-width: 600px;
+      color: var(--text-secondary);
+    }
+
+    .filter-btn-group {
+      display: flex;
+      border: 1.5px solid var(--primary);
+      border-radius: 12px;
+      margin: 22px 0;
+      flex-wrap: wrap;
+      font-weight: 500;
+    }
+
+    .filter-btn {
+      font-size: 16px;
+      padding: 8px 18px;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--primary);
+      cursor: pointer;
+      border: none;
+    }
+
+    .filter-btn.active {
+      background: rgba(0, 191, 255, 0.2);
+    }
+
+    .filter-btn:hover {
+      background: rgba(0, 191, 255, 0.08);
+    }
+
+    .card-container {
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: var(--bg-light);
+      color: var(--text-primary);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card .card-subtitle {
+      color: var(--text-secondary);
+    }
+
+    .badge {
+      background-color: var(--primary);
+      color: #000;
+      margin-right: 5px;
+    }
+
+    .btn-outline-dark {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline-dark:hover {
+      background-color: var(--primary);
+      color: #000;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      background-color: #00a8e6;
+    }
+
+    .preview-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,191,255, 0.3);
+      margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+      #projects h2 {
+        font-size: 32px;
+      }
+      .filter-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+    }
+    .carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.screenshot-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 15px;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.screenshot-carousel img {
+  flex: 0 0 calc(50% - 7.5px); /* Two images per row */
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  scroll-snap-align: start;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.carousel-btn.left {
+  left: 5px;
+}
+
+.carousel-btn.right {
+  right: 5px;
+}
+
+.aurora-img {
+   height: 120%;
+}
+  </style>
+</head>
+<body>
+
+<div class="container-fluid" id="projects">
+  <h2 class="mb-3">Project Portfolio</h2>
+  <p>I have worked on a wide range of projects. Web applications & Java CLI softwares. Here are some of my projects.</p>
+
+  <!-- Filter Buttons -->
+  <div class="filter-btn-group justify-content-center gap-2">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="web">Web Applications</button>
+    <button class="filter-btn" data-category="cli">CLI Java</button>
+  </div>
+
+  <!-- Project Cards -->
+  <div class="row px-4 card-container" id="project-container"></div>
+</div>
+
+<script>
+  const projects = [
+ {
+  title: "Smart Car Parking & Visitor Management System",
+  date: "Dec 2024 – Apr 2025",
+  category: "web",
+  description: `
+    <p><strong>Final Year Project – BSc in Computer Science (Software Engineering)</strong></p>
+    <p>Designed and developed a comprehensive full-stack web application for real-time smart parking and visitor management at the iconic Colombo Lotus Tower. The system addresses high-volume traffic and visitor congestion through automation, analytics, and secure access management.</p>
+
+    <strong>🔹 Key Features:</strong>
+    <ul>
+      <li><strong>Automated vehicle entry/exit:</strong> Uses system-generated bills and real-time parking slot allocation; future-ready for ANPR (Automatic Number Plate Recognition) integration.</li>
+      <li><strong>Real-time slot tracking:</strong> Live dashboard visualization of available parking spaces to optimize occupancy and reduce congestion.</li>
+      <li><strong>Visitor scheduling system (VMS):</strong> Enables internal staff to register meetings with external visitors (e.g., SLT, Dialog, DMS), automatically granting free parking and sending SMTP email alerts to visitors.</li>
+      <li><strong>Role-based login system:</strong> Separate access for admin, staff, and security personnel with privilege management.</li>
+      <li><strong>Integrated reporting module:</strong> Cashier-wise, sales summaries, and vehicle count reports with PDF/Excel export capabilities.</li>
+      <li><strong>Compliance-focused:</strong> Adheres to GDPR and PCI DSS standards for data privacy and transaction security.</li>
+    </ul>
+
+    <strong>🔹 Development Approach:</strong>
+    <ul>
+      <li>Adopted the Agile methodology with iterative feedback loops from stakeholders (administrators, security staff, visitors).</li>
+      <li>Performed validation through systematic test cases covering login authentication, vehicle entry/exit scenarios, billing accuracy, slot management, and reporting accuracy.</li>
+    </ul>
+
+    <strong>🔹 Achievements:</strong>
+    <ul>
+      <li>Improved parking space utilization and visitor coordination by replacing manual workflows with automated modules.</li>
+      <li>Enhanced security and efficiency by integrating role-based access, real-time monitoring, and digital record-keeping.</li>
+      <li>Built a scalable architecture with provisions for future upgrades like IoT sensors, smart barrier gates, dynamic pricing models, and mobile app integration.</li>
+    </ul>
+
+    <strong>🔹 Screenshots:</strong><br>
+<div class="carousel-wrapper">
+  <button class="carousel-btn left">&#10094;</button> <!-- Left arrow -->
+  <div class="screenshot-carousel" id="carousel">
+    <img src="Entrance Page.png" alt="Entrance Page" class="preview-img" />
+    <img src="Exit Page.png" alt="Exit Page" class="preview-img" />
+    <img src="VMS Dashboard.png" alt="VMS Dashboard" class="preview-img" />
+    <img src="Visitor Schedule.png" alt="Visitor Schedule" class="preview-img" />
+  </div>
+  <button class="carousel-btn right">&#10095;</button> <!-- Right arrow -->
+</div>
+
+`,
+techStack: [
+    "ASP.NET", "HTML", "CSS", "Bootstrap", "JavaScript",
+    "C#", "SQL Server", "Stored Procedures", "Triggers",
+    "GitHub", "SMTP", "iTextSharp", "ClosedXML"
+  ],
+ 
+  github: "https://github.com/your-repo-link-scpms",
+  live: "#"
+},
+   {
+  title: "Ticketing System – PIXEL BLOOM",
+  date: "Feb 2024 – Jun 2024",
+  category: "web",
+  description: `
+    <p> Designed and developed a complete ticketing system for Colombo Lotus Tower's PIXEL BLOOM exhibition, covering front-end, back-end, and database layers using C#, .NET, SQL Server, and Crystal Reports. The system enhanced operational flow and visitor experience through real-time validation and seamless hardware integration. </P>
+
+    <strong>🔹 Key Features:</strong>
+    <ul>
+      <li>Thermal printer support with automatic/manual cash drawer integration</li>
+      <li>Crystal Reports for sales and transaction reports</li>
+      <li>Real-time ticket scanning and payment status updates</li>
+    </ul>
+
+    <strong>🔹 Development Approach:</strong>
+    <ul>
+      <li>Focused on reliable hardware-software integration (cash drawers, printers)</li>
+      <li>Real-time payment handling for fast, secure transactions</li>
+    </ul>
+
+    <strong>🔹 Achievements:</strong>
+    <ul>
+      <li>Automated cash drawer improved cashier efficiency and reduced errors</li>
+      <li>Delivered a stable, high-throughput system used daily by thousands of visitors</li>
+    </ul>
+
+    <div class="project-screenshots mb-3">
+      <strong>🔹 Screenshots:</strong>
+      <div class="carousel-wrapper mt-2">
+        <button class="carousel-btn left">&#10094;</button>
+        <div class="screenshot-carousel" id="carousel">
+          <img src="Ticketing_System.png" alt="Ticketing System" class="preview-img" />
+        </div>
+        <button class="carousel-btn right">&#10095;</button>
+      </div>
+    </div>
+  `,
+  techStack: ["C#", ".NET", "SQL Server", "Crystal Reports", "Hardware Integration"],
+  github: "https://github.com/your-repo-link-pixelbloom",
+  live: "#"
+}
+,
+{
+  title: "Aurora Skin Care Clinic System – Java CLI",
+  date: "Nov 2024",
+  category: "cli",
+  description: `
+    <p><strong>BSc Coursework – Kingston University</strong></p>
+    <p>Built a CLI system to manage appointment bookings, dermatologist scheduling, treatment assignment, and invoice generation for a fictional dermatology clinic.</p>
+
+    <strong>🔹 Key Features:</strong>
+    <ul>
+      <li>OOP-based architecture using abstract classes for various treatments (Acne, Mole Removal, Laser, etc.)</li>
+      <li>Validated inputs for NIC, phone, email, date/time, ensuring clean user data</li>
+      <li>Static counters for appointment IDs and automatic bill generation with tax and discounts</li>
+      <li>Appointment slot conflict handling, dermatologist tracking, and patient registration</li>
+    </ul>
+
+    <strong>🔹 Technologies:</strong>
+    <ul>
+      <li>Java, OOP, ArrayList, HashMap, Date API, CLI</li>
+    </ul>
+
+     <strong>🔹 Screenshots:</strong><br>
+<div class="carousel-wrapper">
+  <button class="carousel-btn left">&#10094;</button> <!-- Left arrow -->
+  <div class="screenshot-carousel" id="carousel">
+    <img src="Aurora SkinCare1.png" alt="Aurora SkinCare Page" class="preview-img aurora-img" />
+    <img src="Aurora SkinCare2.png" alt="Aurora SkinCare Page" class="preview-img aurora-img" />
+  </div>
+  <button class="carousel-btn right">&#10095;</button> <!-- Right arrow -->
+</div>
+  `,
+  techStack: ["Java", "OOP", "ArrayList", "Date API", , "HashMap", " Date/Time API", "CLI ANSI Color Styling"],
+  code: "https://github.com/GaniduJayasanka/Aurora-Skin-Care-CLI-System",
+},
+{
+  title: "Pizza Shop Management System – Java CLI",
+  date: "Dec 2024",
+  category: "cli",
+  description: `
+    <p><strong>BSc Coursework – Kingston University</strong></p>
+    <p>Simulated real-time ordering, pizza customization, billing, and customer loyalty using Java design patterns in a CLI system.</p>
+
+    <strong>🔹 Key Features:</strong>
+    <ul>
+      <li>Used Builder, Strategy, State, Command, Observer, and Chain of Responsibility patterns</li>
+      <li>Support for pickup/delivery, promotions, favorites, and loyalty program tracking</li>
+      <li>Robust input validation with over 50+ functional test cases implemented</li>
+    </ul>
+
+    <strong>🔹 Technologies:</strong>
+    <ul>
+      <li>Java, File I/O, CLI, OOP, Design Patterns</li>
+    </ul>
+
+    <strong>🔹 Screenshots:</strong><br>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left">&#10094;</button>
+      <div class="screenshot-carousel" id="carousel">
+        <img src="Pizza Ordering System1.png" alt="Pizza Customization" class="preview-img" />
+        
+      </div>
+      <button class="carousel-btn right">&#10095;</button>
+    </div>
+  `,
+  techStack: ["Java", "CLI", "File I/O", "Builder", "Strategy", "State"],
+  code: "https://github.com/GaniduJayasanka/Pizza-Ordering-System-CLI"
+},
+
+{
+title: "Employee Management Portal (SPA)",
+date: "2023",
+category: "web",
+description: `
+<p><strong>Personal Project</strong></p>
+<p>Built a responsive Single Page Application (SPA) using Angular and .NET Web API for managing employee records, with features like CRUD operations, photo uploads, and role-based views.</p>
+  <strong>🔹 Key Features:</strong>
+<ul>
+  <li>Full CRUD for employee data with dynamic search and filter</li>
+  <li>Photo upload with preview and secure file handling</li>
+  <li>Responsive admin dashboard with role-based access</li>
+</ul>
+
+<strong>🔹 Technologies:</strong>
+<ul>
+  <li>Angular 15, .NET Web API, SQL Server, Bootstrap, JSON</li>
+</ul>
+
+
+`,
+techStack: ["Angular 15", ".NET Web API", "SQL Server", "Bootstrap", "JSON"],
+code: "https://github.com/GaniduJayasanka/Employee-Management-Portal-Angular15-.NET-Sql-Server-"
+}
+];
+
+  const container = document.getElementById("project-container");
+
+  projects.forEach((project, index) => {
+    const techBadges = project.techStack.map(tech => `<span class="badge">${tech}</span>`).join(" ");
+    
+    // Assign unique carousel ID for each project
+    const uniqueCarouselId = `carousel-${index}`;
+
+    const html = `
+      <div class="col-md-6 mb-4">
+        <div class="card p-3 h-100">
+          <h5>${project.title}</h5>
+          <h6 class="card-subtitle mb-2">${project.date}</h6>
+          <div class="card-text">${project.description.replaceAll('id="carousel"', `id="${uniqueCarouselId}"`)}</div>
+          <div class="mt-3"><strong>Tech Stack:</strong><br>${techBadges}</div>
+          <div class="mt-3">
+            ${project.code ? `<a href="${project.code}" target="_blank" class="btn btn-outline-dark btn-sm me-2">Full Code</a>` : ""}
+            ${project.live ? `<a href="${project.live}" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>` : ""}
+          </div>
+        </div>
+      </div>
+    `;
+
+    container.innerHTML += html;
+
+    // Add carousel scroll behavior for each project
+    setTimeout(() => {
+      const carousel = document.getElementById(uniqueCarouselId);
+      const leftBtn = carousel.previousElementSibling;
+      const rightBtn = carousel.nextElementSibling;
+
+      leftBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: -carousel.offsetWidth, behavior: "smooth" });
+      });
+      rightBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: carousel.offsetWidth, behavior: "smooth" });
+      });
+    }, 100);
+  });
+
+ // Filter button functionality
+  const filterButtons = document.querySelectorAll(".filter-btn");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Remove active class from all buttons
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      // Add active class to clicked button
+      button.classList.add("active");
+
+      const category = button.getAttribute("data-category");
+      const allCards = document.querySelectorAll(".card-container > .col-md-6");
+
+      allCards.forEach(card => {
+        const index = [...card.parentElement.children].indexOf(card);
+        const projectCategory = projects[index].category;
+
+        if (category === "all" || category === projectCategory) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+
+</script>
+
+</body>
+</html>

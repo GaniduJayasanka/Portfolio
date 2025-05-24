@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ganidu Jayasanka - Software Engineer</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+  <style>
+    :root {
+      --bg-dark: #000000; /* black background */
+      --primary: #00aaff; /* sky blue */
+      --red-glow: rgba(0, 170, 255, 0.6);
+      --deep-glow: rgba(0, 140, 200, 0.4);
+      --light: #ffffff;
+      --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--light);
+      font-family: var(--font);
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 20px 40px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      color: var(--light);
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .social-icons a {
+      color: var(--light);
+      margin-left: 15px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--primary);
+    }
+
+    .hero-section {
+      padding: 80px 20px;
+    }
+
+    .hero-text h3 {
+      color: var(--primary);
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h2 {
+      font-size: 32px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      color: #ccc;
+      max-width: 500px;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      border: none;
+      border-radius: 50px;
+      padding: 14px 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background-color: #008ecc;
+    }
+
+    .image-glow-container {
+      position: relative;
+      width: 320px;
+      height: 370px;
+      margin: auto;
+    }
+
+    .glow-border {
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      right: -40px;
+      bottom: -40px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 170, 255, 0.8) 10%, transparent 70%);
+      filter: blur(60px);
+      z-index: 0;
+      animation: pulseGlow 3s infinite ease-in-out;
+      opacity: 0.9;
+    }
+
+    .image-wrapper {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid rgba(255, 255, 255, 0.1);
+      z-index: 1;
+      position: relative;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.85; }
+    }
+
+    .typed-text {
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .cursor {
+      display: inline-block;
+      color: var(--primary);
+      font-weight: bold;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @media (max-width: 992px) {
+      .hero-text {
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+      }
+
+      .hero-text h2 {
+        font-size: 26px;
+      }
+    }
+
+    .social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start; /* Align to left */
+  margin-top: 20px;
+  margin-left: 20px; /* Slight shift to the left */
+}
+
+.social-icons a {
+  font-size: 24px;
+  color: skyblue;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Hover color styles */
+.social-icons a:nth-child(1):hover { color: #333; }      /* GitHub */
+.social-icons a:nth-child(2):hover { color: #0077b5; }   /* LinkedIn */
+.social-icons a:nth-child(3):hover { color: #1877F2; }   /* Facebook */
+
+  </style>
+
+</head>
+<body>
+
+ <header class="container-fluid py-3">
+  <div class="row align-items-center">
+    <!-- Logo on the top-left -->
+    <div class="col-12 col-md-3 text-md-start text-center mb-2 mb-md-0">
+      <div class="logo">
+        <span style="color: white;">Port</span><span style="color: var(--primary);">folio</span>
+      </div>
+    </div>
+
+    <!-- Nav centered -->
+    <div class="col-12 col-md-6 offset-md-1">
+      <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="Experience/Experience.html">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://drive.google.com/file/d/1_oaZOwpQclkd3o30K4CO4-s3CjKKkIXv/view?usp=sharing">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="Skills/Skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="Edu/education.html">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="Projects/Projects.html">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+  <!-- HERO SECTION WITH TYPING TEXT -->
+  <section class="container hero-section" id="home">
+    <div class="row align-items-center">
+      <div class="col-lg-6 hero-text">
+        <h4><span   style="color: white;">Hello, I'm</span></h4>
+        <h1>Ganidu Jayasanka</h1>
+        <h2><span   style="color: white;">And I'm a</span> <span class="typed-text"></span><span class="cursor">|</span></h3>
+         <p style="text-align: justify; font-family: 'Calibri', 'Segoe UI', 'Circle', sans-serif; font-size: 12pt; color: white;">
+      I am a motivated and versatile Software Engineer with a passion for continuous learning and innovation. 
+      With over <span style="color: var(--primary);">2 years of experience</span> in ERP systems, full-stack web development, 
+      and enterprise software, I approach every challenge with a growth mindset and a commitment to excellence. 
+      I strive to deliver high-quality, user-centric solutions that make a meaningful impact.
+    </p>
+     <div class="social-icons">
+  <a href="https://github.com/GaniduJayasanka"><i class="fab fa-github"></i></a>
+  <a href="https://www.linkedin.com/in/ganidu-jayasanka/"><i class="fab fa-linkedin"></i></a>
+  <a href="https://www.facebook.com/Ganidu01/"><i class="fab fa-facebook"></i></a>
+</div>
+
+      </div>
+      <div class="col-lg-6 text-center mt-5 mt-lg-0">
+        <div class="image-glow-container">
+          <div class="glow-border"></div>
+          <div class="image-wrapper">
+            <img src="Profile_Img1.png" alt="Designer Image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typed Text Script -->
+  <script>
+    const typedTextSpan = document.querySelector(".typed-text");
+    const cursorSpan = document.querySelector(".cursor");
+
+    const textArray = ["Software Engineer", "Full Stack Web Developer", "Quality Assurance Engineer"];
+    const typingDelay = 100;
+    const erasingDelay = 60;
+    const newTextDelay = 1500;
+    let textArrayIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } else {
+        setTimeout(erase, newTextDelay);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } else {
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (textArray.length) setTimeout(type, newTextDelay);
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
