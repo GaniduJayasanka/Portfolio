@@ -209,9 +209,7 @@ header {
   .project-date {
     color: #28a745; /* green */
   }
-  .project-category {
-    color: #6c757d; /* gray */
-  }
+
   </style>
 </head>
 <body>
@@ -508,6 +506,24 @@ code: "https://github.com/GaniduJayasanka/Employee-Management-Portal-Angular15-.
       });
     });
   });
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const projectTitle = document.querySelector('.title');
+
+    // Split the title text into parts you want to color
+    const originalText = projectTitle.textContent.trim();
+
+    // Wrap "Project" with project-title class and "Portfolio" with project-date class
+    const coloredHTML = originalText
+      .replace(/Project/i, '<span class="project-title">Project</span>')
+      .replace(/Portfolio/i, '<span class="project-date">Portfolio</span>');
+
+    // Update the element's inner HTML
+    projectTitle.innerHTML = coloredHTML;
+  });
+
 
 </script>
 
